@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Login
+  p Please login below
+  form(method='post',action='/users/register',enctype='multipart/form-data')  
+    .form-group
+      lable Username
+      input.form-control(name='username', type='text')
+    .form-group
+      lable Passport
+      input.form-control(name='passport', type='passport')
+    input.btn.btn-default(name='submit', type='submit', value='Login')
