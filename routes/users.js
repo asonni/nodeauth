@@ -21,8 +21,6 @@ router.get('/login', function(req, res, next) {
 });
 
 router.post('/register', function(req, res, next){
-  console.log("hiii");
-  console.log(req.body);
   // Get Form Values
   var name = req.body.name;
   var email = req.body.email;
@@ -44,8 +42,6 @@ router.post('/register', function(req, res, next){
   //   // Set a Default Image
   //   var profileImageName = 'noimage.png';
   // }
-  
-  console.log(req.body);
 
   // Form Validation
   req.checkBody('name','Name field is required').notEmpty();
