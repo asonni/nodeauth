@@ -20,12 +20,12 @@ router.get('/login', function(req, res, next) {
   });
 });
 
-router.post('/register',function(req, res, next){
+router.post('/register', function(req, res, next){
   // Get Form Values
-  var name      = req.body.name;
-  var email     = req.body.email;
-  var username  = req.body.username;
-  var password  = req.body.password;
+  var name = req.body.name;
+  var email = req.body.email;
+  var username = req.body.username;
+  var password = req.body.password;
   var password2 = req.body.password2;
   
   // Check for Image Field
@@ -43,6 +43,8 @@ router.post('/register',function(req, res, next){
   //   var profileImageName = 'noimage.png';
   // }
   
+  console.log(req.body);
+
   // Form Validation
   req.checkBody('name','Name field is required').notEmpty();
   req.checkBody('email','Email field is required').notEmpty();
@@ -63,7 +65,8 @@ router.post('/register',function(req, res, next){
       password: password,
       password2: password2
     });
-  } else {
+  }
+  else {
     var newUser = new User({
       name: name,
       email: email,
@@ -80,10 +83,10 @@ router.post('/register',function(req, res, next){
 
     // Success Message
     req.flash('success','You are now registered and may log in');
+    
     res.location('/');
     res.redirect('/');
   }
-
 });
 
 
