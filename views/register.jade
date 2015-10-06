@@ -4,10 +4,10 @@ block content
   h1 Register
   p Please register using the form below
   ul.errors
-    if errors
-      each error, i in errors
-        li.alert.alert-danger #{error.msg}
-  form(method='post',action='/users/register',enctype='multipart/form-data')  
+    //- if errors
+    //-   each error, i in errors
+    //-     li.alert.alert-danger #{error.msg}
+  form.form#editSemester(method="post",action="/users/register/", accept-charset="utf-8", role="form")
     .form-group
       lable Name
       input.form-control(name='name', type='text', placeholder='Enter Name')
@@ -26,4 +26,4 @@ block content
     //- .form-group
     //-   lable Profile Image
     //-   input.form-control(name='profileimage', type='file')
-    input.btn.btn-default(name='submit', type='submit', value='Register')
+    input(name='submit', type='submit', value='Register')
